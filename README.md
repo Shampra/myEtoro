@@ -35,11 +35,32 @@ Create a Google sheet with the titles of the following columns:
 - NOTE: what you want... I write down my analysis (resistance for example) and the action to be taken (guidance for example)
 - TYPE: US/EU/MAT/CR, allows to filter the markets (to see only open markets for example)
 Columns are (normally) not mandatory, use the ones you want. If a market is not present or poorly rated, the script will simply not do anything about it.
+
+Sheet look like this :
+![My image](img/googleSheets.png)
+
 Start rating the markets you are interested in.
 Share your sheet and note the sharing link.
+
 
 In the code:
 - note this link in the variable idSpreadsheet
 - note the name of your sheet in SheetName
 
-Activez le script sur Etoro :).
+![My image](img/var_script.png)
+
+Activate the script on Etoro :).
+
+
+# What??
+Some screenshot snapshots to illustrate...
+
+... Alerts (red name), high leverage (x10 tag), notes in popup when mouse hover market logo, ER date
+![My image](img/portfolio1.png)
+
+... same on market page
+![My image](img/market.png)
+
+... filter by place (clic to hide US markets... I use it when US is closed to see only open markets... but I must improve it)
+![My image](img/FilterEU.png)
+
