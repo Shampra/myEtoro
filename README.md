@@ -2,7 +2,18 @@
 Add functionnality &amp; data to Etoto with an usercript
 
 # Why
-.. à refaire suite plantage...
+Using etoro lately, I find that things are missing in their interface. 
+Etoro really doesn't seem to be in an Agile process (already, no possibility to make suggestions and little improvement of the interface)
+So either I complain or I find a solution.... 
+In my todo list:
+- To be able to annotate the actions (penile of having to juggle with notes apart), see these notes everywhere.
+- Highlight markets (monitoring or actions to be taken quickly, for example)
+- More info: date of earnings reports, variation in pre-marketing
+- On the portfolio, see directly the daily evolution of the market 
+- The ability to copy text! (especially the performance of the traders, for analysis in a separate sheet before copying them if necessary)
+- Sort my portfolio or favourites to see only open markets
+- etc
+The script answers most of them. 
 
 
 # How
