@@ -56,7 +56,7 @@ Activate the script on Etoro :).
 Some screenshot snapshots to illustrate...
 
 ... Alerts (red name), high leverage (x10 tag), notes in popup when mouse hover market logo, ER date
-![My image](img/portfolio1.png)
+![My image](img/portfolio1.png) 
 
 ... same on market page
 ![My image](img/market.png)
