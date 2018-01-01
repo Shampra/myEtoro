@@ -60,8 +60,15 @@ Some screenshot snapshots to illustrate...
 ... same on market page
 ![My image](img/market.png)
 
-... filter by place (clic to hide US markets... I use it when US is closed to see only open markets... but I must improve it)
-![My image](img/FilterEU.png)
+... filter by market type (type or US/EU), you can display multiple markets at the same time (useful for viewing open markets, e. g. EU + CRYPTO + MATERIALS at 10' GMT)
+Click to choose one; CTRL + click to select multiple and OK
+![My image](img/FilterType.png)
+
+... filter by action (french only actually)
+![My image](img/FilterAction.png)
+
+... export on Portfolio and history
+![My image](img/Export.png)
 
 
 # TODO
