@@ -17,9 +17,8 @@ The script answers most of them.
 
 
 # How
-.. à refaire suite plantage...
-
-
+The script retrieves the information in a Google sheet (to allow everyone to host their own information... in a previous script I would host for everyone but that poses other problems).
+Depending on the Etoro page detected, it simply injects the data from this sheet. Easy ;-).
 
 
 # Install
@@ -64,3 +63,9 @@ Some screenshot snapshots to illustrate...
 ... filter by place (clic to hide US markets... I use it when US is closed to see only open markets... but I must improve it)
 ![My image](img/FilterEU.png)
 
+
+# TODO
+- Better filter (keep filter in memory with LocalStorage)
+- Spreads information
+- Get consensus, earning report automatically or more simply
+- view daily change on portfolio... for this one, I don't know how (whithout spam another website which is not great, )
