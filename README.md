@@ -80,3 +80,8 @@ Click to choose one; CTRL + click to select multiple and OK
 - Spreads information
 - Get consensus, earning report automatically or more simply
 - view daily change on portfolio... for this one, I don't know how (whithout spam another website which is not great, )
+
+# DONE (MAJ GIT NOT DONE, sorry)
+28-12-2017 : Filters Actions and Type working simultaneously (e. g. see "US shares" marked "for sale")
+05-01-2017 : Filters are stored for the session (e. g. allows you to open a stock and go back in time without losing the current filter)
+17-01-2018 : the action filter is now dynamic (allows you to add what you want as needed)
