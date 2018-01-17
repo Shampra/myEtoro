@@ -1,7 +1,7 @@
 
 
 ## myEtoro
-**Add functionnality &amp; data to Etoto with an usercript**
+**Add functionnality &amp; data to Etoro with an usercript**
 
 ** French version here : (readme-fr.md)**
 
@@ -19,7 +19,7 @@ Using etoro lately, I find that things are missing in their interface.
 Etoro really doesn't seem to be in an Agile process (already, no possibility to make suggestions and little improvement of the interface)
 So either I complain or I find a solution.... 
 In my todo list:
-- To be able to annotate the actions (penile of having to juggle with notes apart), see these notes everywhere.
+- To be able to annotate the actions (painful to have to juggle with notes apart), see these notes everywhere.
 - Highlight markets (monitoring or actions to be taken quickly, for example)
 - More info: date of earnings reports, variation in pre-marketing
 - On the portfolio, see directly the daily evolution of the market 
