@@ -3,7 +3,7 @@
 ## myEtoro
 **Add functionnality &amp; data to Etoro with an usercript**
 
-** French version here : (readme-fr.md)**
+** French version here : [readme-fr.md](readme-fr.md)**
 
 - [Why this script?](#Why)
 - [How it works?](#How)
