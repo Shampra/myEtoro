@@ -76,25 +76,35 @@ function constructPage() {
 // Insertion des données dans la page
 function insertData(data) {
 
+  /* Cibles à enrichir
+  Page d'un marché
+    div.market-page div.user-head-content div.user-head h1.user-nickname
+    infos dans div.user-head
+  Page des positions d'un marché
+    a.i-portfolio-table-hat-cell p.i-portfolio-table-hat-symbol
+  Page des favoris
+    each div.table-name-cell div.user-nickname
+  Page du portefeuille
+    div.table-static-cell-info div.table-first-name
+
+
+  */
 
   //--------------------------------------------------------------------------------------------
-  // Traitement du Portefeuille, url =  https://www.etoro.com/portfolio
+  // Traitement du Portefeuille (version "Aperçu"), url =  https://www.etoro.com/portfolio
   //--------------------------------------------------------------------------------------------
   if (window.location.href === "https://www.etoro.com/portfolio") {
     //enrichissement par ligne
     $("div.ui-table-static-cell").each(function (index) {
-      // Ajout des éléments vides
-      if ($(this).find(".myDataER").length) return; // Il y a déjà l'élément, on arrête la boucle // TODO : A MODIFIER POUR MAJ
-      var divData = $("<div></div>").addClass("myDataER");
-      $(this).find("div.table-static-cell-info").append(divData);
-
-
+      if ($(this).find(".myData").length) return; // Il y a déjà l'élément, on arrête la boucle // TODO : A MODIFIER POUR MAJ
 
       // Récup de la valeur ciblée
       var currentItem = $(this).find("div.table-first-name").text();
       // Récup des infos
       var arrayCible = searchByNom(currentItem.toUpperCase(), data);
       if (arrayCible) {
+        // Insertion hors infobulle de l'ER
+        $(this).find("div.table-static-cell-info").append(prepareER(arrayCible));
         // On prépare le contenu
         var content = prepareContent(arrayCible);
         var tips = $("<div></div>").addClass("myData tooltip " + arrayCible.TYPE).append(content);
@@ -104,26 +114,6 @@ function insertData(data) {
         // Gestion de la version tooltip
         $(this).hover(function () { $(this).next('.tooltip').css({ 'visibility': 'visible' }); },
           function () { $(this).next('.tooltip').css({ 'visibility': 'hidden' }); });
-
-        // TODO
-        // On refait la date, à MUTUALISER!
-        // Rapport
-        if (arrayCible.ER != "") {
-          var dateRapport = new Date(arrayCible.ER);
-          var formatDateRapport = dateRapport.getDate() + "/" + (dateRapport.getMonth() + 1);
-          var stringRapport = "ER le " + ("0" + dateRapport.getDate()).slice(-2) + "/" + ("0" + (dateRapport.getMonth() + 1)).slice(-2);
-          $(this).find("div.myDataER").text(stringRapport);
-
-
-          // mise en forme suivant date
-          var currentDate = new Date();
-          var todayDate = currentDate.getDate() + "/" + (currentDate.getMonth() + 1);
-          var tomorrowDate = (currentDate.getDate() + 1) + "/" + (currentDate.getMonth() + 1);
-          var yesterdayDate = (currentDate.getDate() - 1) + "/" + (currentDate.getMonth() + 1);
-          if (todayDate == formatDateRapport) $(this).find("div.myDataER").addClass("ER_ajd");
-          else if (tomorrowDate == formatDateRapport) $(this).find("div.myDataER").addClass("ER_demain");
-          else if (yesterdayDate == formatDateRapport) $(this).find("div.myDataER").addClass("ER_hier");
-        }
 
         // Mise en valeur si alerte
         if (arrayCible.ALERT == "x") $(this).find("div.table-first-name").css({ "color": "red" });
@@ -326,12 +316,6 @@ function insertData(data) {
     }
   }
   //--------------------------------------------------------------------------------------------
-  // Traitement des positions du portefeuille, url = https://www.etoro.com/portfolio/gddy
-  //--------------------------------------------------------------------------------------------
-  else if ((document.location.href.indexOf('portfolio') > -1) && (window.location.href !== "https://www.etoro.com/portfolio")) {
-    console.log("DEBUG - on fait les positions du portfolio - TODO");
-  }
-  //--------------------------------------------------------------------------------------------
   // Traitement d'un marché ex : https://www.etoro.com/markets/gddy
   //--------------------------------------------------------------------------------------------
   else if (document.location.href.indexOf('markets') > -1) {
@@ -382,6 +366,9 @@ function insertData(data) {
         // Gestion de la version tooltip
         $(this).hover(function () { $(this).next('.tooltip').css({ 'visibility': 'visible' }); },
           function () { $(this).next('.tooltip').css({ 'visibility': 'hidden' }); });
+
+        // info ER
+        $(this).find("div.table-info").before(prepareER(arrayCible));
 
         // Mise en valeur si alerte
         if (arrayCible.ALERT == "x") $(this).find("span.user-nickname").css({ "color": "red" });
@@ -583,20 +570,27 @@ function prepareContent(arrayCible) {
   var contenu = "";
 
   ////// TODO
-  if (arrayCible.TODO) contenu = "<span class=\"dataTODO " + arrayCible.TODO + "\" style=\"font-weight:bold\">" + arrayCible.TODO + "</span></br>";
-  else contenu = contenu + " <span>...</span></br>";
+  if (arrayCible.TODO) contenu = "<div class=\"dataTODO " + arrayCible.TODO + "\" style=\"font-weight:bold\">" + arrayCible.TODO + "</div>";
+  else contenu = contenu + " <div>...</div>";
 
-  if (arrayCible.OUT) contenu = contenu + "<span class=\"dataOUT\" >(sortie à " + arrayCible.OUT + ")</span></br>";
-  if (arrayCible.NOTE) contenu = contenu + "<span class=\"dataACTION\" >" + arrayCible.NOTE + "</span></br>";
+  if (arrayCible.OUT) contenu = contenu + "<div class=\"dataOUT\" >(sortie à " + arrayCible.OUT + ")</div>";
+  if (arrayCible.NOTE) contenu = contenu + "<div class=\"dataACTION\" >" + arrayCible.NOTE + "</div>";
 
   ////// OBJECTIF
-  contenu = contenu + "<span class=\"dataOBJECTIF\" >";
+  contenu = contenu + "<div class=\"dataOBJECTIF\" >";
   if (arrayCible.TARGET) contenu = contenu + " Objectif = " + arrayCible.TARGET; else contenu = contenu + "-";
   if (arrayCible.ESTIMATE) contenu = contenu + " (" + arrayCible.ESTIMATE + ")";
-  contenu = contenu + " </span></br>";
+  contenu = contenu + " </div>";
 
 
   ////////// DATE ER
+  contenu = contenu + prepareER(arrayCible);
+  return contenu;
+}
+
+// Mise en forme de la date ER
+function prepareER(arrayCible){
+  var divER ="";
   if (arrayCible.ER != "") {
     var dateRapport = new Date(arrayCible.ER);
     var formatDateRapport = dateRapport.getDate() + "/" + (dateRapport.getMonth() + 1);
@@ -611,13 +605,11 @@ function prepareContent(arrayCible) {
     else if (tomorrowDate == formatDateRapport) myClass = "ER_demain";
     else if (yesterdayDate == formatDateRapport) myClass = "ER_hier";
 
-    contenu = contenu + "<span class=\"dataER " + myClass + "\">" + stringRapport + "</span>";
+    divER = "<div class=\"dataER " + myClass + "\">" + stringRapport + "</div>";
   }
+return divER;
 
-
-  return contenu;
 }
-
 
 // Fonction de recherche dans l'array Json
 function searchByNom(eltName, data) {
@@ -628,10 +620,6 @@ function searchByNom(eltName, data) {
 
 
 function stylesheet() {
-
-  $('.myDataER').css({
-    'font-size': '10px'
-  });
 
   // CSS du mydata générique
   $('.myData').css({
@@ -652,13 +640,13 @@ function stylesheet() {
     'height': 'calc(100% + 12px)',
     'margin': '-6px 0px -6px 5px'
   });
-  $('div.ui-table-static-cell div.myData span.dataER, div.table-row div.myData span.dataER').css({
+  $('div.ui-table-static-cell div.myData div.dataER, div.table-row div.myData div.dataER').css({
     'display': 'none',
     'height': 'calc(100% + 12px)',
     'margin': '-6px 0px -6px 5px'
   });
 
-  // market
+  // Spécifique market
   $('div.user-head-content-ph div.myData').css({
     'font-size': '10px',
     'height': 'calc(100% + 12px)',
@@ -666,10 +654,22 @@ function stylesheet() {
     'min-width': '200px'
   });
 
+// Spécifique favoris
+$('div[ng-model="watchlist.Instruments"] .dataER').css({
+    'font-size': '10px',
+    'position':'absolute',
+    'display':'inline',
+    'margin':'12px',
+    'font-weight':'normal',
+    'color':'grey'
+  });
 
 
 
   // Date de rapport
+  $('.dataER').css({
+    'font-size': '10px'
+  });
   $('.ER_hier').css({
     'background-color': 'beige'
   });

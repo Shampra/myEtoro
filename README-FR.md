@@ -90,16 +90,24 @@ Cliquer pour en choisir un; CTRL+click pour en choisir plusieurs en validant via
 
 ![My image](img/Export.png)
 
+... date des résultats sur les favoris
+
+![My image](img/ER_watchlist.png)
+
 
 ## Feuille de route
 
- - Meilleurs filtres sur les portefeuille/favoris 
-	 - [X] *(26/12/2017)* Les filtres Actions et Types marchent simultanément (ex : voir les stocks "US" marqués à "Vendre")
-	 - [X] *(08/01/2018)* Les filtres sont enregistrés pour la session (ex : permet d'ouvrir un stock puis revenir en arrière sans perdre le filtre actif)
-	- [X] *(17/01/2018)* Le filtre action est maintenant dynamique, permettant d'ajouter ce que vous voulez (pas forcément des actions d'ailleurs... ex : Ajouter un "Surveiller SL" si nécessaire... oui, j'en ai besoin aujourd'hui :disappointed: )
+**TODO**
 -  [ ] Information dynamique sur le "spread"
 -  [ ] Récupérer dynamiquement le consensus
 -  [ ] Récupérer dynamiquement les dates de résultats (ou plus facilement que la saisie manuelle dans la feuille)
 -  [ ] Afficher dynamiquement la variation journalière sur le portefeuille
 	- ... pour celui-là, je ne sais pas comment faire (sans avoir à spammer ou payer l'API d'un autre site)
+
+**FAIT**
+- Meilleurs filtres sur les portefeuille/favoris 
+	- [X] *(26/12/2017)* Les filtres Actions et Types marchent simultanément (ex : voir les stocks "US" marqués à "Vendre")
+	- [X] *(08/01/2018)* Les filtres sont enregistrés pour la session (ex : permet d'ouvrir un stock puis revenir en arrière sans perdre le filtre actif)
+	- [X] *(17/01/2018)* Le filtre action est maintenant dynamique, permettant d'ajouter ce que vous voulez (pas forcément des actions d'ailleurs... ex : Ajouter un "Surveiller SL" si nécessaire...)
 -  [X] Voir les G/P par type de stocks (marre d'être polluer par les mouvements des crypto...)
+-  [X] Voir les dates des résultats sur les favoris (indispensable en période de résultats!)

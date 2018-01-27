@@ -88,17 +88,25 @@ Click to choose one; CTRL + click to select multiple and OK
 
 ![My image](img/Export.png)
 
+... ER date on watchlists
+
+![My image](img/ER_watchlist.png)
+
 
 ## Roadmap Project
 
- - Better filter on portfolio/favorites
-	 - [X] *(26/12/2017)* Filters Actions and Type working simultaneously (e. g. see "US shares" marked "for sale")
-	 - [X] *(08/01/2018)* Filters are stored for the session (e. g. allows you to open a stock and go back in time without losing the current filter)
-	- [X] *(17/01/2018)* Action filter is now dynamic, allows you to add what you want as needed (e. g. Add a "Survey SL" item if needeed... yes I need it today :disappointed: )
+**TODO**
 -  [ ] Dynamic spreads information 
 -  [ ] View consensus on portfolio and/or Favorites
 -  [ ] View Earning reports
 	- [ ] Get them automatically (or more simply)
 -  [ ] View daily change on portfolio
 	- ... for this one, I don't know how (whithout spam another website which is not great)
+
+**DONE**
+- Better filter on portfolio/favorites
+	 - [X] *(26/12/2017)* Filters Actions and Type working simultaneously (e. g. see "US shares" marked "for sale")
+	 - [X] *(08/01/2018)* Filters are stored for the session (e. g. allows you to open a stock and go back in time without losing the current filter)
+	- [X] *(17/01/2018)* Action filter is now dynamic, allows you to add what you want as needed (e. g. Add a "Survey SL" item if needeed... yes I need it today :disappointed: )
 -  [X] *(25/01/2018)* View GP per stock (to no longer be polluted by cryptos...)
+-  [X] *(27/01/2018)* View ER date on watchlists (useful on ER period!)
