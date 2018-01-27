@@ -212,25 +212,51 @@ function insertData(data) {
     else {
       $("div.inner-header-buttons").append(menuExport);
 
-      $(".actionExport").on('click', function (event) {
-        var titles = ['Titre complet', 'Fermeture complet', 'Ouvert', 'Fermé', 'Investi', 'Gain'];
-        var data = [];
-        data.push(titles);
-        $('div.ui-table-row').each(function () {
+    $(".actionExport").on('click', function (event) {
+      // On déplie toute la liste
+      var checkExist = setInterval(function() {
+        if ($('button.more-info-button').length) {
+           console.log("Exists!");
+           $('button.more-info-button').click();
+        }
+        else {
+          // C'est déplié, on poursuit
+
+         clearInterval(checkExist);
+        }
+      }, 500);
+
+      var titles = ['Titre complet', 'Type fermeture', 'fermé à', 'Date ouverture', 'Date fermeture', 'Gain'];
+      var data = [];
+      data.push(titles);
+      $('div.ui-table-row').each(function() {
+        // On filtre pour n'avoir que les positions
+        if ( $(this).find("span.i-portfolio-table-marker-obj").last().text() != "")
+        {
+          // Item
           //var cItem =  $.trim($(this).find("div.i-portfolio-table-inner-name-symbol").clone().children().remove().end().text());
-          var cItem = $.trim($(this).find("div.i-portfolio-table-inner-name-symbol").text());
-          var cReason = $(this).find("div.i-history-close-reason ").attr('class');
-          if (typeof cReason === "undefined") cReason = "Manuel";
-          else if (cReason.indexOf("sl") > -1) cReason = "SL"; else if (cReason.indexOf("tp") > -1) cReason = "TP"; else if (cReason.indexOf("cr") > -1) cReason = "cr";
-          var cOpenAt = $(this).find("p.i-portfolio-table-cell-inner-date").first().text();
-          var cCloseAt = $(this).find("p.i-portfolio-table-cell-inner-date").first().text();
-          var cInvesti = $(this).find("span.i-portfolio-table-marker-obj").first().text(); // Doit être le 1er... pas moyen de le reconnaitre hors position :(
-          var cSorti = $(this).find("span.i-portfolio-table-marker-obj").eq(3).text();
-          var cGain = $(this).find("span.i-portfolio-table-marker-obj").last().text(); // Doit être le 1er... pas moyen de le reconnaitre hors position :(
-          var current = [cItem, cReason, cSorti, cOpenAt, cCloseAt, cInvesti, cGain];
+          var cItem =  $.trim($(this).find("div.i-portfolio-table-inner-name-symbol").text());
+          // Type de fermeture
+          var cReason =  $(this).find("div.i-history-close-reason ").attr('class');
+          if (typeof cReason === "undefined") cReason = "Manuel"; else if (cReason.indexOf("sl") > -1) cReason = "SL"; else if (cReason.indexOf("tp") > -1) cReason = "TP";else if (cReason.indexOf("cr") > -1) cReason = "cr";
+          // Fermé à
+          var cSorti =  $(this).find("span.i-portfolio-table-marker-obj").eq(3).text();
+          cSorti = cSorti.replace('.',',');
+          // Date ouverture
+          var cDateOpen =  $(this).find("p.i-portfolio-table-cell-inner-date").first().text();
+          // Date fermeture
+          var cDateClose =  $(this).find("p.i-portfolio-table-cell-inner-date").eq(2).text();
+          // Montant
+          var cInvesti =  $(this).find("span.i-portfolio-table-marker-obj").first().text();
+          cInvesti = cInvesti.replace('.',',');
+          // GP
+          var cGain =  $(this).find("span.i-portfolio-table-marker-obj").last().text();
+          cGain = cGain.replace('.',',');
+          var current = [cItem, cReason, cSorti, cDateOpen, cDateClose, cInvesti, cGain];
           data.push(current);
-        });
-        let csv = "";
+        }
+      });
+      let csv = "";
         data.forEach(function (rowArray) {
           let row = rowArray.join(";");
           csv += row + "\r\n"; // add carriage return
