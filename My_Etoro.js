@@ -644,122 +644,121 @@ function searchByNom(eltName, data) {
   else return undefined;
 }
 
-
 function stylesheet() {
-
-  // CSS du mydata générique
-  $('.myData').css({
-    'position': 'absolute',
-    'height': '100%',
-    'white-space': 'nowrap',
-    'border': '1px solid #aaa',
-    'border-radius': '5px',
-    'display': 'inline-block',
-    'background-color': '#F8F8F8',
-    'padding': '0 5px',
-    'box-shadow': ' 1px 1px 3px #aaa'
-  });
-
-  // Spécifique porfolio
-  $('div.ui-table-static-cell div.myData, div.table-row div.myData').css({
-    'font-size': '10px',
-    'height': 'calc(100% + 12px)',
-    'margin': '-6px 0px -6px 5px'
-  });
-  $('div.ui-table-static-cell div.myData div.dataER, div.table-row div.myData div.dataER').css({
-    'display': 'none',
-    'height': 'calc(100% + 12px)',
-    'margin': '-6px 0px -6px 5px'
-  });
-
-  // Spécifique market
-  $('div.user-head-content-ph div.myData').css({
-    'font-size': '10px',
-    'height': 'calc(100% + 12px)',
-    'margin': '-6px 0px -6px 400px',
-    'min-width': '200px'
-  });
-
-// Spécifique favoris
-$('div[ng-model="watchlist.Instruments"] .dataER').css({
-    'font-size': '10px',
-    'position':'absolute',
-    'display':'inline',
-    'margin':'12px',
-    'font-weight':'normal',
-    'color':'grey'
-  });
-
-
-
-  // Date de rapport
-  $('.dataER').css({
-    'font-size': '10px'
-  });
-  $('.ER_hier').css({
-    'background-color': 'beige'
-  });
-  $('.ER_ajd').css({
-    'font-weight': 'bold',
-    'color': 'red',
-    'font-size': '12px',
-    'background-color': 'beige'
-  });
-  $('.ER_demain').css({
-    'font-weight': 'bold',
-    'background-color': 'beige'
-  });
-
-  // TOOLTIP
-  $("img.avatar, img.i-portfolio-table-hat-avatar").hover(function () { $(this).next('.tooltip').css({ 'visibility': 'visible' }); },
-    function () { $(this).next('.tooltip').css({ 'visibility': 'hidden' }); });
-
-
-  $('div.tooltip').css({
-    'visibility': 'hidden',
-  });
-
-  $('.icon_leverage').css({
-    'vertical-align': 'sub',
-    'font-size': '8px',
-    'font-weight': 'bold',
-    'position': 'absolute',
-    'left': '5px',
-    'top': '0'
-  });
-
-  // Filtres
-  $("div.menuFilter, div.myBoxFilter").hover(function () { $(this).find('div.myBoxFilter').show(); },
-    function () { $(this).find('.myBoxFilter').hide(); });
-
-  $('.myBoxFilter').css({
-    'top': '60px',
-    'min-width': '150px',
-    'padding': '5px'
-  });
-
-  $('.myBoxFilter input').css({
-    'margin-right': '5px',
-    'margin-left': '-5px'
-  });
-
-  $('.myBoxFilter .okFiltre, .myBoxFilter .updateTotaux').css({
-    'width': 'calc(100% + 8px)',
-    'margin': '-4px',
-    'border': '1px solid black'
-  });
-
-  $('.spriteAction').css({
-    'background-position': 'inherit'
-  });
-
-}
-
-function globalStyleSheet() {
-  $('body').css({
-    '-moz-user-select': 'auto',
-    '-webkit-user-select': 'auto',
-    'user-select': 'auto'
-  });
-
-}
+  
+    // CSS du mydata générique
+    $('.myData').css({
+      'position': 'absolute',
+      'height': '100%',
+      'white-space': 'nowrap',
+      'border': '1px solid #aaa',
+      'border-radius': '5px',
+      'display': 'inline-block',
+      'background-color': '#F8F8F8',
+      'padding': '0 5px',
+      'box-shadow': ' 1px 1px 3px #aaa'
+    });
+  
+    // Spécifique porfolio
+    $('div.ui-table-static-cell div.myData, div.table-row div.myData').css({
+      'font-size': '10px',
+      'height': 'calc(100% + 12px)',
+      'margin': '-6px 0px -6px 5px'
+    });
+    $('div.ui-table-static-cell div.myData div.dataER, div.table-row div.myData div.dataER').css({
+      'display': 'none',
+      'height': 'calc(100% + 12px)',
+      'margin': '-6px 0px -6px 5px'
+    });
+  
+    // Spécifique market
+    $('div.user-head-content-ph div.myData').css({
+      'font-size': '10px',
+      'height': 'calc(100% + 12px)',
+      'margin': '-6px 0px -6px 400px',
+      'min-width': '200px'
+    });
+  
+  // Spécifique favoris
+  $('div[ng-model="$ctrl.watchlist.Instruments"] .dataER').css({
+      'font-size': '10px',
+      'position':'absolute',
+      'display':'inline',
+      'margin':'12px',
+      'font-weight':'normal',
+      'color':'grey'
+    });
+  
+  
+  
+    // Date de rapport
+    $('.dataER').css({
+      'font-size': '10px'
+    });
+    $('.ER_hier').css({
+      'background-color': 'beige'
+    });
+    $('.ER_ajd').css({
+      'font-weight': 'bold',
+      'color': 'red',
+      'font-size': '12px',
+      'background-color': 'beige'
+    });
+    $('.ER_demain').css({
+      'font-weight': 'bold',
+      'background-color': 'beige'
+    });
+  
+    // TOOLTIP
+    $("img.avatar, img.i-portfolio-table-hat-avatar").hover(function () { $(this).next('.tooltip').css({ 'visibility': 'visible' }); },
+      function () { $(this).next('.tooltip').css({ 'visibility': 'hidden' }); });
+  
+  
+    $('div.tooltip').css({
+      'visibility': 'hidden',
+    });
+  
+    $('.icon_leverage').css({
+      'vertical-align': 'sub',
+      'font-size': '8px',
+      'font-weight': 'bold',
+      'position': 'absolute',
+      'left': '5px',
+      'top': '0'
+    });
+  
+    // Filtres
+    $("div.menuFilter, div.myBoxFilter").hover(function () { $(this).find('div.myBoxFilter').show(); },
+      function () { $(this).find('.myBoxFilter').hide(); });
+  
+    $('.myBoxFilter').css({
+      'top': '60px',
+      'min-width': '150px',
+      'padding': '5px'
+    });
+  
+    $('.myBoxFilter input').css({
+      'margin-right': '5px',
+      'margin-left': '-5px'
+    });
+  
+    $('.myBoxFilter .okFiltre, .myBoxFilter .updateTotaux').css({
+      'width': 'calc(100% + 8px)',
+      'margin': '-4px',
+      'border': '1px solid black'
+    });
+  
+    $('.spriteAction').css({
+      'background-position': 'inherit'
+    });
+  
+  }
+  
+  function globalStyleSheet() {
+    $('body').css({
+      '-moz-user-select': 'auto',
+      '-webkit-user-select': 'auto',
+      'user-select': 'auto'
+    });
+  
+  }
