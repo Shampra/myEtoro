@@ -1,3 +1,8 @@
+**The userscript version is abandoned, a more advanced version is available in Firefox extension! 
+(not yet published here)**
+**[Webextension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/my_etoro/)**
+
+
 
 
 ## myEtoro
