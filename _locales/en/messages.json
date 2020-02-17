@@ -1,0 +1,82 @@
+{
+  "extensionDescription": {
+    "message": "Customized feature overlay for Etoro.",
+    "description": "Description de l'extension."
+  },
+
+
+  "setting_Global_Title": {
+    "message": "Configuration of My Etoro",
+    "description": "Titre global de la configuration'"
+  },
+  "setting_GroupTitle_GoogleFile": {
+    "message": "Access configuration for Google Sheet",
+    "description": "Titre de la section Google Sheets'"
+  },
+  "setting_GroupDesc_GoogleFile": {
+    "message": "My Etoro doesn't store any of your data! You must therefore store them in a personal Google Sheets file...",
+    "description": "Label de paramétrage pour l'id Google Sheets'"
+  },
+  "setting_GroupDesc_GoogleFile_1": {
+    "message": "To use your Sheet, you have to configure two values.",
+    "description": "Label de paramétrage pour l'id Google Sheets part 2'"
+  },
+
+  "settingsLabelSheetName": {
+    "message": "Name of the sheet :",
+    "description": "Label de paramétrage pour le nom de la feuille"
+  },
+
+  "settingsLabelidSpreadsheet": {
+    "message": "Google Sheet file ID :",
+    "description": "Label de paramétrage pour l'id Google Sheets'"
+  },
+
+
+  
+  "setting_GroupTitle_Options": {
+    "message": "Configuring the options",
+    "description": "Titre de la section Options'"
+  },
+  "settingsShortTitle": {
+    "message": "Shorten the title of the page displayed on the tab",
+    "description": "Label de paramétrage pour le choix Titre court"
+  },
+  "settingsDirectLinkNotification": {
+    "message": "Add a link to the marketplace page on the notifications image",
+    "description": "Label de paramétrage pour le choix Lien des notifs"
+  },
+
+  
+
+  "boutonUpdate": {
+    "message": "Update",
+    "description": "Bouton de MAJ des stats positions"
+  },
+  
+    "order_ByName": {
+    "message": "By name",
+    "description": "Libellé du tri alphabetique par nom"
+  },
+  "order_ByGP": {
+    "message": "By G/P",
+    "description": "Libellé du tri  par GP"
+  },
+  "order_ByER": {
+    "message": "By date of reports",
+    "description": "Libellé du tri par date de résultats"
+  },
+  "order_ByDefault": {
+    "message": "Default",
+    "description": "Libellé du tri retiré, celui d'Etoro laissé"
+  },
+
+  " infosMarket_Objectif": {
+    "message": "Target",
+    "description": "Libellé objectif sur info d'un marché"
+  }
+  
+
+
+
+}

@@ -1,0 +1,62 @@
+
+
+/*
+Titre de section couleur bleu
+sur cadre grisé
+
+
+
+
+
+
+*/
+
+#SettingTitle
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+header.header_config
+{
+    background-color: #f6f6f6;
+    border: 1px solid #e5e5e5;
+    margin: 20px 0;
+    padding: 5px;
+}
+
+header.header_config h3
+{
+    margin: 2px 0 5px 0;
+    color: #0079b9;
+}
+header.header_config .section_description
+{
+    font-style: italic;
+}
+
+div.element label
+{
+    margin: 5px 20px 5px 10px;
+    width: 200px;
+    display: inline-block;
+    font-weight: bold;
+}
+div.element label.checkbox
+{
+    margin: 5px 20px 5px 10px;
+    width: 400px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+div.element input
+{
+    background-color:#f0f0f0
+}
+
+div.element #idSpreadsheet
+{
+    width : 360px;
+}

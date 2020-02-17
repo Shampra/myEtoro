@@ -1,0 +1,25 @@
+img.bt_img
+{
+    width: 22px;
+    background-position: 0;
+}
+
+.customMenu:hover img
+{
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+.i-instrument-navigation-item:hover .bt_img
+{
+    filter: sepia(100%) hue-rotate(190deg) saturate(400%) brightness(60%) ;
+}
+
+
+.w-instrument-navigation .bt_img
+{
+    display: inline-block;
+    height: 30px;
+    margin-right: 12px;
+    vertical-align: middle;
+    width: 30px;
+}

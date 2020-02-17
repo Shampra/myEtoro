@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "default_locale": "fr",
+  "name": "My_Etoro",
+  "version": "1.2",
+  "author":"Shampra",
+  "description": "__MSG_extensionDescription__",
+  "homepage_url":"https://github.com/Shampra/myEtoro",
+  "icons": {
+    "48": "images/myetoro_48.ico"
+  },
+
+  "browser_action": {
+      "default_icon": "images/myetoro_32.png",
+      "default_title": "My Etoro",
+      "browser_style": true,
+      "default_popup": "popup/popup.html"
+    },
+  "options_ui": {
+    "page": "popup/options.html", 
+    "open_in_tab": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.etoro.com/*"],
+      "js": ["jquery.min.js","waitForKeyElements.js","My_Etoro.js","traduction.js" ],
+      "css":["My_Etoro.css"]
+    }
+  ],
+  "background": {
+    "scripts": ["background-script.js"]
+  },
+  "permissions": ["<all_urls>", "storage"],
+  
+  "web_accessible_resources": [
+    "images/export-excel.png",
+    "images/filtretype.png",
+    "images/order.png",
+    "images/percentage.png",
+    "images/history.png",
+    "images/filtreaction.png",
+    "images/alert_on.png",
+    "images/alert_off.png"
+]
+
+}

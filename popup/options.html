@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="options.css" />
+</head>
+
+<body>
+  <form>
+
+    <p id="SettingTitle" data-i18n="setting_Global_Title"></p>
+    <section id="configSheet">
+        <header class="header_config">
+            <h3 data-i18n="setting_GroupTitle_GoogleFile"></h3>
+              <div class="section_description">
+                <span data-i18n="setting_GroupDesc_GoogleFile"></span>
+                <br/>
+                <span data-i18n="setting_GroupDesc_GoogleFile_1"></span>
+              </div>
+        </header>
+      <div class="element"><label data-i18n="settingsLabelidSpreadsheet"></label><input id="idSpreadsheet" type="text"></div>
+      <div class="element"><label data-i18n="settingsLabelSheetName"></label><input id="SheetName" type="text"></div>
+    </section>
+	<hr>
+	<section id="configSheet_param">
+    <header class="header_config">
+      <h3 data-i18n="setting_GroupTitle_Options"></h3>
+  </header>
+  <div class="element"><input type="checkbox" id="titre_court" name="titre_court" /><label class="checkbox" data-i18n="settingsShortTitle"></label></div>
+  <div class="element"><input type="checkbox" id="DirectLinkNotification" name="DirectLinkNotification" /><label class="checkbox" data-i18n="settingsDirectLinkNotification"></label></div>
+	</section>
+	<hr>
+  <button type="submit">Save</button>
+</form>
+<script src="../jquery.min.js"></script>
+  <script src="options.js"></script>
+  <script src="../traduction.js"></script>
+</body>
+
+</html>
