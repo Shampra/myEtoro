@@ -3,16 +3,19 @@ const manualTradesEnhancements = (() => {
     function init(config, sheetData) {
         if (config.features.manualTradesEnhancements.enabled) {
             if (window.location.href == "https://www.etoro.com/portfolio/manual-trades") {
+                console.log("Initializing manualTradesEnhancements feature...");
                 enrichManualTrades(sheetData);
             }
         }
     }
 
     function enrichManualTrades(data) {
+        console.log("Enriching manual trades page...");
         $("div.ui-table-row").each(function (index) {
             var currentItem = $(this).find("div.table-first-name").children("span.ng-binding").last().text().trim();
             var arrayCible = searchByNom(currentItem.toUpperCase(), data);
             if (arrayCible) {
+                console.log(`Enriching ${currentItem}`);
                 var content = prepareContent(arrayCible);
                 var tips = $("<div></div>").addClass("myData tooltip " + arrayCible.TYPE).append(content);
                 $(this).find("img.avatar").after(tips);
@@ -23,13 +26,16 @@ const manualTradesEnhancements = (() => {
         });
 
         if (!$("div.inner-header-buttons").find(".menuFilter").length) {
+            console.log("Creating filters...");
             createFilter("All", "portfolio", data);
         }
 
         var menuExport = "<a class=\"icon actionExport customMenu mobile-off\"><div class=\"list\"><img class=\"bt_img\" src=\"" + browser.runtime.getURL('images/export-excel.png') + "\"/></div></a>";
         if (!$("div.inner-header-buttons").find(".actionExport").length) {
+            console.log("Adding export button...");
             $("div.inner-header-buttons").append(menuExport);
             $(".actionExport").on('click', function (event) {
+                console.log("Export button clicked.");
                 var titles = ['Titre', 'Valeur', 'Levier', 'Etat'];
                 var data = [];
                 data.push(titles);
@@ -48,6 +54,7 @@ const manualTradesEnhancements = (() => {
                 });
                 var csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
                 $(this).attr({ 'download': "export.csv", 'href': csvData, 'target': '_blank' });
+                console.log("Manual trades exported.");
             });
         }
     }
