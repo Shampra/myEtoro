@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+h1, h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}

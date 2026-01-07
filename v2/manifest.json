@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "My eToro v2",
+  "version": "2.0.0",
+  "author": "Jules",
+  "description": "__MSG_extensionDescription__",
+  "homepage_url": "https://github.com/Shampra/myEtoro",
+  "icons": {
+    "48": "icons/myetoro_48.ico",
+    "32": "icons/myetoro_32.png"
+  },
+  "action": {
+    "default_icon": "icons/myetoro_32.png",
+    "default_title": "My eToro v2"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.etoro.com/*"],
+      "js": ["js/content.js"],
+      "css": []
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*.png",
+        "icons/*.ico"
+      ],
+      "matches": [
+        "*://*.etoro.com/*"
+      ]
+    }
+  ]
+}

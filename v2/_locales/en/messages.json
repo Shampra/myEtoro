@@ -1,0 +1,18 @@
+{
+  "extensionDescription": {
+    "message": "Enhances the eToro website with new features.",
+    "description": "The description of the extension."
+  },
+  "exportJsonButton": {
+    "message": "Export JSON",
+    "description": "The text for the portfolio export JSON button."
+  },
+  "exportCsvButton": {
+    "message": "Export CSV",
+    "description": "The text for the portfolio export CSV button."
+  },
+  "historyShortcut": {
+    "message": "History",
+    "description": "The text for the instrument history shortcut link."
+  }
+}
