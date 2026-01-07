@@ -1,53 +1,49 @@
-function saveOptions(e) {
-    e.preventDefault();
-    console.log("test");
-    if ($("#SheetName").val()  && $("#idSpreadsheet").val())
-    {
-        $("#SheetName").removeAttr('style');
-        $("#idSpreadsheet").removeAttr('style');
-        $("#errorconfigSheet").remove();
-        browser.storage.local.set({
-            //    MyEtoro_idSpreadsheet: document.querySelector("#idSpreadsheet").value,
-                MyEtoro_SheetName: $("#SheetName").val(),
-                MyEtoro_idSpreadsheet: $("#idSpreadsheet").val(),
-                MyEtoro_setShortTitle: $("#titre_court").prop('checked'),
-                MyEtoro_setDirectLinkNotif: $("#DirectLinkNotification").prop('checked')
-            });
-        $("form").append('<strong id="errorconfigSheet">Données enregistrées.</strong>');
-    }
-    else if ($("#SheetName").val() || $("#idSpreadsheet").val())
-    {
-        
-            console.log("Champs mal rempli");
-            $("#configSheet").append('<strong id="errorconfigSheet">Il faut renseigner les deux valeurs (ou aucune).</strong>');
-            $("#SheetName").css("background-color", "red");
-            $("#idSpreadsheet").css("background-color", "red");
-    }
-    else
-    console.log("Pas de configuration de feuille, les fonctions l'utilisant ne marcheront pas.")
-   
-  }
-  
-  function restoreOptions() {
-    // erreur sur promise
-    function onError(error) {
-        console.log(`Error: ${error}`);
-      }
-    
-      // Retour ok
-      function onGot(item) {
-        console.log(item);
-        $("#SheetName").val(item.MyEtoro_SheetName) ;
-        $("#idSpreadsheet").val(item.MyEtoro_idSpreadsheet) ;
-        $("#titre_court").prop('checked',MyEtoro_setShortTitle) ;
-        $("#DirectLinkNotification").prop('checked',MyEtoro_setDirectLinkNotif) ;
-      }
-    var gettingItem = browser.storage.local.get();
-    gettingItem.then(onGot, onError);
+//- Options page script
+document.addEventListener("DOMContentLoaded", async () => {
+    const config = await getConfig();
+    const featuresContainer = document.getElementById("features");
 
-  }
-  
-  // Récup des options au chargement
-  document.addEventListener("DOMContentLoaded", restoreOptions);
-  // Sauvegarde
-  document.querySelector("form").addEventListener("submit", saveOptions);
+    //- Populate Google Sheets settings
+    document.getElementById("googleSheetEnabled").checked = config.googleSheet.enabled;
+    document.getElementById("idSpreadsheet").value = config.googleSheet.id || "";
+    document.getElementById("SheetName").value = config.googleSheet.sheetName || "";
+
+    //- Dynamically populate features
+    for (const featureKey in config.features) {
+        const feature = config.features[featureKey];
+        const element = document.createElement("div");
+        element.classList.add("element");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = featureKey;
+        checkbox.checked = feature.enabled;
+
+        const label = document.createElement("label");
+        label.classList.add("checkbox");
+        label.setAttribute("for", featureKey);
+        label.textContent = feature.name;
+
+        element.appendChild(checkbox);
+        element.appendChild(label);
+        featuresContainer.appendChild(element);
+    }
+
+    //- Save settings
+    document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        //- Save Google Sheets settings
+        config.googleSheet.enabled = document.getElementById("googleSheetEnabled").checked;
+        config.googleSheet.id = document.getElementById("idSpreadsheet").value;
+        config.googleSheet.sheetName = document.getElementById("SheetName").value;
+
+        //- Save feature settings
+        for (const featureKey in config.features) {
+            config.features[featureKey].enabled = document.getElementById(featureKey).checked;
+        }
+
+        await saveConfig(config);
+        window.close();
+    });
+});

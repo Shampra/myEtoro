@@ -1,52 +1,45 @@
-browser.runtime.onMessage.addListener(setbadge);
+browser.runtime.onMessage.addListener(updateBadge);
 
-function setbadge(message) {
+function updateBadge(message) {
+    let text = "";
+    let color = "grey";
+    let title = "My_Etoro";
 
-            
-    if (message.action == "off")
-    {
-        browser.browserAction.setBadgeText({text: "init"});
-        browser.browserAction.setBadgeBackgroundColor({color: "grey"});
-        browser.browserAction.setTitle({title: "My_Etoro"});
-    }
-    else if (message.action == "na")
-    {
-        browser.browserAction.setBadgeText({text: "off"});
-        browser.browserAction.setBadgeBackgroundColor({color: "grey"});
-        browser.browserAction.setTitle({title: "My_Etoro - non configuré"});
-    }
-    else if (message.action == "waiting")
-    {
-        browser.browserAction.setBadgeText({text: "-"});
-        browser.browserAction.setBadgeBackgroundColor({color: "grey"});
-        browser.browserAction.setTitle({title: "My_Etoro : Feuille non configurée"});
-    }
-    else if (message.action == "lancement")
-    {
-        browser.browserAction.setBadgeText({text: "Load"});
-        browser.browserAction.setBadgeBackgroundColor({color: "#ff9900"});
-        browser.browserAction.setTitle({title: "My_Etoro : Attente réponse Google Sheet"});
-    }
-    else if (message.action == "update")
-    {
-        browser.browserAction.setBadgeText({text: "maj"});
-        browser.browserAction.setBadgeBackgroundColor({color: "#ff9900"});
-        browser.browserAction.setTitle({title: "My_Etoro : Mise à jour data Google Sheet"});
-    }
-    else if (message.action == "erreur")
-    {
-        browser.browserAction.setBadgeText({text: "!"});
-        browser.browserAction.setBadgeBackgroundColor({color: "red"});
-        browser.browserAction.setTitle({title: "My_Etoro : Erreur de récupération des données Google Sheet"});
-    }
-    else if (message.action == "ok")
-    {
-        browser.browserAction.setBadgeText({text: "on"});
-        browser.browserAction.setBadgeBackgroundColor({color: "green"});
-        browser.browserAction.setTitle({title: "My_Etoro : Données Google Sheet chargées"});
+    switch (message.action) {
+        case "off":
+            text = "init";
+            break;
+        case "na":
+            text = "off";
+            title = "My_Etoro - Not configured";
+            break;
+        case "waiting":
+            text = "-";
+            title = "My_Etoro - Sheet not configured";
+            break;
+        case "lancement":
+            text = "Load";
+            color = "#ff9900";
+            title = "My_Etoro - Waiting for Google Sheet";
+            break;
+        case "update":
+            text = "maj";
+            color = "#ff9900";
+            title = "My_Etoro - Updating from Google Sheet";
+            break;
+        case "error":
+            text = "!";
+            color = "red";
+            title = "My_Etoro - Error fetching from Google Sheet";
+            break;
+        case "ok":
+            text = "on";
+            color = "green";
+            title = "My_Etoro - Google Sheet data loaded";
+            break;
     }
 
-    
+    browser.browserAction.setBadgeText({ text: text });
+    browser.browserAction.setBadgeBackgroundColor({ color: color });
+    browser.browserAction.setTitle({ title: title });
 }
-
-

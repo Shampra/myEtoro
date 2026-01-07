@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="options.css" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css" />
 </head>
-
 <body>
-  <form>
-
-    <p id="SettingTitle" data-i18n="setting_Global_Title"></p>
-    <section id="configSheet">
-        <header class="header_config">
-            <h3 data-i18n="setting_GroupTitle_GoogleFile"></h3>
-              <div class="section_description">
-                <span data-i18n="setting_GroupDesc_GoogleFile"></span>
-                <br/>
-                <span data-i18n="setting_GroupDesc_GoogleFile_1"></span>
-              </div>
-        </header>
-      <div class="element"><label data-i18n="settingsLabelidSpreadsheet"></label><input id="idSpreadsheet" type="text"></div>
-      <div class="element"><label data-i18n="settingsLabelSheetName"></label><input id="SheetName" type="text"></div>
-    </section>
-	<hr>
-	<section id="configSheet_param">
-    <header class="header_config">
-      <h3 data-i18n="setting_GroupTitle_Options"></h3>
-  </header>
-  <div class="element"><input type="checkbox" id="titre_court" name="titre_court" /><label class="checkbox" data-i18n="settingsShortTitle"></label></div>
-  <div class="element"><input type="checkbox" id="DirectLinkNotification" name="DirectLinkNotification" /><label class="checkbox" data-i18n="settingsDirectLinkNotification"></label></div>
-	</section>
-	<hr>
-  <button type="submit">Save</button>
-</form>
-<script src="../jquery.min.js"></script>
-  <script src="options.js"></script>
-  <script src="../traduction.js"></script>
+    <form>
+        <p id="SettingTitle" data-i18n="setting_Global_Title">Extension Settings</p>
+        <section id="configSheet">
+            <header class="header_config">
+                <h3 data-i18n="setting_GroupTitle_GoogleFile">Google Sheets (Optional)</h3>
+                <div class="section_description">
+                    <span data-i18n="setting_GroupDesc_GoogleFile">Enable to add extra data from a Google Sheet.</span>
+                </div>
+            </header>
+            <div class="element">
+                <input type="checkbox" id="googleSheetEnabled" />
+                <label class="checkbox" for="googleSheetEnabled">Enable Google Sheets integration</label>
+            </div>
+            <div class="element">
+                <label for="idSpreadsheet" data-i18n="settingsLabelidSpreadsheet">Spreadsheet ID</label>
+                <input id="idSpreadsheet" type="text">
+            </div>
+            <div class="element">
+                <label for="SheetName" data-i18n="settingsLabelSheetName">Sheet Name</label>
+                <input id="SheetName" type="text">
+            </div>
+        </section>
+        <hr>
+        <section id="features">
+            <header class="header_config">
+                <h3 data-i18n="setting_GroupTitle_Options">Features</h3>
+            </header>
+            <!-- Features will be dynamically added here -->
+        </section>
+        <hr>
+        <button type="submit">Save</button>
+    </form>
+    <script src="../jquery.min.js"></script>
+    <script src="../config.js"></script>
+    <script src="options.js"></script>
 </body>
-
 </html>
