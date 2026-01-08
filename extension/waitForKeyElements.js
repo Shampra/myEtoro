@@ -76,6 +76,7 @@ function waitForKeyElements (
     else {
         //--- Set a timer, if needed.
         if ( ! timeControl) {
+            logger.log(`waitForKeyElements: Waiting for "${selectorTxt}"...`);
             timeControl = setInterval ( function () {
                     waitForKeyElements (    selectorTxt,
                                             actionFunction,

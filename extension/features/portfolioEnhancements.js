@@ -3,14 +3,14 @@ const portfolioEnhancements = (() => {
     function init(config, sheetData) {
         if (config.features.portfolioEnhancements.enabled) {
             if (window.location.href.includes("https://www.etoro.com/portfolio")) {
-                console.log("Initializing portfolioEnhancements feature...");
+                logger.log("Initializing portfolioEnhancements feature...");
                 enrichPortfolio(sheetData);
             }
         }
     }
 
     function enrichPortfolio(data) {
-        console.log("Enriching portfolio...");
+        logger.log("Enriching portfolio...");
         // - Enrichissement par ligne
         $("div.ui-table-static-cell").each(function (index) {
             if ($(this).find(".myData").length) return;
@@ -18,7 +18,7 @@ const portfolioEnhancements = (() => {
             var currentItem = $(this).find("div.table-first-name").text().trim();
             var arrayCible = searchByNom(currentItem.toUpperCase(), data);
             if (arrayCible) {
-                console.log(`Enriching ${currentItem}`);
+                logger.log(`Enriching ${currentItem}`);
                 $(this).find("div.table-static-cell-info").append(prepareER(arrayCible));
                 var content = prepareContent(arrayCible);
                 var tips = $("<div></div>").addClass("myData tooltip " + arrayCible.TYPE).append(content);
@@ -32,13 +32,13 @@ const portfolioEnhancements = (() => {
 
         // - Ajout des filtres
         if (!$("div.inner-header-buttons").find(".menuFilter").length) {
-            console.log("Creating filters...");
+            logger.log("Creating filters...");
             createFilter("All", "portfolio", data);
         }
 
         // - Ajout Totaux par type
         if (!$("div.inner-header-buttons").find(".viewTotaux").length) {
-            console.log("Adding totals...");
+            logger.log("Adding totals...");
             var aUS = new Array(".US", "Actions US", 0, 0);
             var aEU = new Array(".EU", "Actions EU", 0, 0);
             var aCR = new Array(".CR", "Crypto", 0, 0);

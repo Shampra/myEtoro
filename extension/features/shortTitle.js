@@ -2,11 +2,11 @@
 const shortTitle = (() => {
     function init(config) {
         if (config.features.shortTitle.enabled && document.location.href.indexOf('markets') > -1) {
-            console.log("Initializing shortTitle feature...");
+            logger.log("Initializing shortTitle feature...");
             setInterval(() => {
                 const titre = $(".user-fullname").first().text();
                 if (document.title !== titre) {
-                    console.log(`Shortening title to "${titre}"`);
+                    logger.log(`Shortening title to "${titre}"`);
                     document.title = titre;
                 }
             }, 5000);

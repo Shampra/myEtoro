@@ -1,5 +1,6 @@
 //- Default configuration
 const defaultConfig = {
+    debug: false,
     googleSheet: {
         id: null,
         sheetName: null,

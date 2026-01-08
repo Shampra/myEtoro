@@ -3,21 +3,21 @@ const watchlistEnhancements = (() => {
     function init(config, sheetData) {
         if (config.features.watchlistEnhancements.enabled) {
             if (document.location.href.indexOf('watchlists') > -1) {
-                console.log("Initializing watchlistEnhancements feature...");
+                logger.log("Initializing watchlistEnhancements feature...");
                 enrichWatchlist(sheetData);
             }
         }
     }
 
     function enrichWatchlist(data) {
-        console.log("Enriching watchlist...");
+        logger.log("Enriching watchlist...");
         $("div.row-wrap").each(function (index) {
             if ($(this).find(".myData").length) return;
 
             var currentItem = $(this).find("div.symbol").text();
             var arrayCible = searchByNom(currentItem.toUpperCase(), data);
             if (arrayCible) {
-                console.log(`Enriching ${currentItem}`);
+                logger.log(`Enriching ${currentItem}`);
                 var content = prepareContent(arrayCible);
                 var tips = $("<div></div>").addClass("myData tooltip " + arrayCible.TYPE).append(content);
                 $(this).find("a.card-avatar-wrap").after(tips);
@@ -37,7 +37,7 @@ const watchlistEnhancements = (() => {
         });
 
         if (!$("div.watch-list-buttons").find(".menuOrder").length) {
-            console.log("Adding sorting menu...");
+            logger.log("Adding sorting menu...");
             var menuOrder = "<div class=\"filter dropdown-menu menuFilter ng-scope customMenu \"><a class=\"icon\"><div class=\"filter\"><img class=\"bt_img\" src=\"" + browser.runtime.getURL('images/order.png') + "\"/></div></a><div class=\"drop-select-box myBoxFilter menuTri\">";
             menuOrder += "<label class=\"order\" ><a class=\"drop-select-box-option NoOrder\"><input type=\"radio\" name=\"tri\" value=\"aucun\">" + browser.i18n.getMessage("order_ByDefault") + "</a></label>";
             menuOrder += "<label class=\"order\" ><a class=\"drop-select-box-option OrderByName\"><input type=\"radio\" name=\"tri\" value=\"nom\">" + browser.i18n.getMessage("order_ByName") + "</a></label>";
@@ -61,7 +61,7 @@ const watchlistEnhancements = (() => {
     }
 
     function Trier(value) {
-        console.log(`Sorting by ${value}`);
+        logger.log(`Sorting by ${value}`);
         if (value == "nom") {
             $("div.table-row:not(.empty)").sort(function (a, b) {
                 a = $("span.user-nickname", a).text();

@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("idSpreadsheet").value = config.googleSheet.id || "";
     document.getElementById("SheetName").value = config.googleSheet.sheetName || "";
 
+    //- Populate debug mode setting
+    document.getElementById("debugMode").checked = config.debug;
+
     //- Dynamically populate features
     for (const featureKey in config.features) {
         const feature = config.features[featureKey];
@@ -37,6 +40,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         config.googleSheet.enabled = document.getElementById("googleSheetEnabled").checked;
         config.googleSheet.id = document.getElementById("idSpreadsheet").value;
         config.googleSheet.sheetName = document.getElementById("SheetName").value;
+
+        //- Save debug mode setting
+        config.debug = document.getElementById("debugMode").checked;
 
         //- Save feature settings
         for (const featureKey in config.features) {

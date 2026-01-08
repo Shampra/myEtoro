@@ -26,6 +26,7 @@
         "jquery.min.js",
         "waitForKeyElements.js",
         "config.js",
+        "logger.js",
         "googleSheets.js",
         "utils.js",
         "features/shortTitle.js",

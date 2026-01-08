@@ -3,23 +3,23 @@ const historyExport = (() => {
     function init(config) {
         if (config.features.historyExport.enabled) {
             if (window.location.href == "https://www.etoro.com/portfolio/history") {
-                console.log("Initializing historyExport feature...");
+                logger.log("Initializing historyExport feature...");
                 addExportButton();
             }
         }
     }
 
     function addExportButton() {
-        console.log("Adding export button...");
+        logger.log("Adding export button...");
         var menuExport = "<a class=\"icon actionExport customMenu mobile-off\"><div class=\"list\"><img class=\"bt_img\" src=\"" + browser.runtime.getURL('images/export-excel.png') + "\"/></div></a>";
         if (!$("div.inner-header-buttons").find(".actionExport").length) {
             $("div.inner-header-buttons").append(menuExport);
             $(".actionExport").on('click', function (event) {
-                console.log("Export button clicked.");
+                logger.log("Export button clicked.");
                 // On déplie toute la liste
                 var checkExist = setInterval(function () {
                     if ($('button.more-info-button').length) {
-                        console.log("Expanding history...");
+                        logger.log("Expanding history...");
                         $('button.more-info-button').click();
                     }
                     else {
@@ -32,7 +32,7 @@ const historyExport = (() => {
     }
 
     function exportHistory() {
-        console.log("Exporting history...");
+        logger.log("Exporting history...");
         var titles = ['Titre complet', 'Levier', 'Type fermeture', 'Prix fermeture', 'Date ouverture', 'Date fermeture', 'Investi', 'Gain', 'Frais'];
         var data = [];
         data.push(titles);
@@ -59,7 +59,7 @@ const historyExport = (() => {
         });
         var csvData = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv);
         $(".actionExport").attr({ 'download': "export.csv", 'href': csvData, 'target': '_blank' });
-        console.log("History exported.");
+        logger.log("History exported.");
     }
 
     return {
