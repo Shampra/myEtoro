@@ -20,12 +20,6 @@ async function main() {
 
   // Start watching for page changes
   pageDetector.start();
-
-  // Example of listening for a specific page load
-  pageDetector.on('page-load:portfolio', () => {
-    log('Portfolio page loaded!');
-    // In the future, this is where we would trigger the portfolio export feature.
-  });
 }
 
 main();

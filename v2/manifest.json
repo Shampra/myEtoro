@@ -12,11 +12,8 @@
   },
   "action": {
     "default_icon": "icons/myetoro_32.png",
-    "default_title": "My eToro v2"
-  },
-  "options_ui": {
-    "page": "options/options.html",
-    "open_in_tab": true
+    "default_title": "My eToro v2",
+    "default_popup": "popup/popup.html"
   },
   "background": {
     "scripts": ["js/background.js"]
@@ -35,7 +32,9 @@
     {
       "resources": [
         "icons/*.png",
-        "icons/*.ico"
+        "icons/*.ico",
+        "js/*.js",
+        "features/*.js"
       ],
       "matches": [
         "*://*.etoro.com/*"
