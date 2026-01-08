@@ -2,14 +2,26 @@
 logger.log("My_Etoro extension loading...");
 this.$ = this.jQuery = jQuery.noConflict(true);
 
-(async () => {
+let config = null;
+let sheetData = null;
+
+async function runFeatures() {
+    logger.log("Running features...");
+    shortTitle.init(config);
+    portfolioEnhancements.init(config, sheetData);
+    watchlistEnhancements.init(config, sheetData);
+    marketPageEnhancements.init(config, sheetData);
+    historyExport.init(config);
+    manualTradesEnhancements.init(config, sheetData);
+    logger.log("Features executed.");
+}
+
+async function main() {
     try {
         logger.log("Fetching configuration...");
-        const config = await getConfig();
-        let sheetData = null;
+        config = await getConfig();
 
         logger.log("Google Sheets configured:", config.googleSheet.enabled);
-        //- Initialize Google Sheets module if enabled
         if (config.googleSheet.enabled && config.googleSheet.id && config.googleSheet.sheetName) {
             try {
                 logger.log("Fetching Google Sheets data...");
@@ -24,17 +36,24 @@ this.$ = this.jQuery = jQuery.noConflict(true);
             browser.runtime.sendMessage({ "action": "na" });
         }
 
-        logger.log("Initializing features...");
-        //- Initialize features
-        shortTitle.init(config);
-        portfolioEnhancements.init(config, sheetData);
-        watchlistEnhancements.init(config, sheetData);
-        marketPageEnhancements.init(config, sheetData);
-        historyExport.init(config);
-        manualTradesEnhancements.init(config, sheetData);
-        logger.log("Features initialized.");
+        runFeatures();
+
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                    runFeatures();
+                    break;
+                }
+            }
+        });
+
+        const targetNode = document.querySelector('body');
+        const observerConfig = { childList: true, subtree: true };
+        observer.observe(targetNode, observerConfig);
 
     } catch (error) {
         logger.log(`Error during initialization: ${error}`);
     }
-})();
+}
+
+main();

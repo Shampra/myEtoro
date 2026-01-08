@@ -6,49 +6,50 @@
 </head>
 <body>
     <form>
-        <p id="SettingTitle" data-i18n="setting_Global_Title">Extension Settings</p>
+        <p id="SettingTitle" data-i18n="setting_Global_Title"></p>
         <section id="configSheet">
             <header class="header_config">
-                <h3 data-i18n="setting_GroupTitle_GoogleFile">Google Sheets (Optional)</h3>
+                <h3 data-i18n="setting_GroupTitle_GoogleFile"></h3>
                 <div class="section_description">
-                    <span data-i18n="setting_GroupDesc_GoogleFile">Enable to add extra data from a Google Sheet.</span>
+                    <span data-i18n="setting_GroupDesc_GoogleFile"></span>
                 </div>
             </header>
             <div class="element">
                 <input type="checkbox" id="googleSheetEnabled" />
-                <label class="checkbox" for="googleSheetEnabled">Enable Google Sheets integration</label>
+                <label class="checkbox" for="googleSheetEnabled" data-i18n="setting_googleSheetEnabled"></label>
             </div>
             <div class="element">
-                <label for="idSpreadsheet" data-i18n="settingsLabelidSpreadsheet">Spreadsheet ID</label>
+                <label for="idSpreadsheet" data-i18n="settingsLabelidSpreadsheet"></label>
                 <input id="idSpreadsheet" type="text">
             </div>
             <div class="element">
-                <label for="SheetName" data-i18n="settingsLabelSheetName">Sheet Name</label>
+                <label for="SheetName" data-i18n="settingsLabelSheetName"></label>
                 <input id="SheetName" type="text">
             </div>
         </section>
         <hr>
         <section id="features">
             <header class="header_config">
-                <h3 data-i18n="setting_GroupTitle_Options">Features</h3>
+                <h3 data-i18n="setting_GroupTitle_Options"></h3>
             </header>
             <!-- Features will be dynamically added here -->
         </section>
         <hr>
         <section id="debug">
             <header class="header_config">
-                <h3>Debug</h3>
+                <h3 data-i18n="setting_GroupTitle_Debug"></h3>
             </header>
             <div class="element">
                 <input type="checkbox" id="debugMode" />
-                <label class="checkbox" for="debugMode">Enable debug logging</label>
+                <label class="checkbox" for="debugMode" data-i18n="setting_debugMode"></label>
             </div>
         </section>
         <hr>
-        <button type="submit">Save</button>
+        <button type="submit" data-i18n="setting_saveButton"></button>
     </form>
     <script src="../jquery.min.js"></script>
     <script src="../config.js"></script>
     <script src="options.js"></script>
+    <script src="../traduction.js"></script>
 </body>
 </html>

@@ -27,9 +27,7 @@ const marketPageEnhancements = (() => {
         });
         if (!$("body").find("#customHisto").length) {
             logger.log("Adding history link...");
-            $("tabstitles.w-instrument-navigation").append('<tabtitle id="customHisto"><a href="/portfolio/history/market/' + currentItem + '"><span class="i-instrument-navigation-item e-link pointer stats-list">' +
-                '<span class="sprite"><img class="bt_img" src="' + browser.runtime.getURL('images/history.png') + '"/></span>' +
-                '<span class="i-instrument-navigation-item-label ng-scope">Historique</span> </span></a></tabtitle>');
+            $("nav.tabs-container").append('<a id="customHisto" href="/portfolio/history/market/' + currentItem + '" class="a-tabs-container-item"><span class="i-instrument-navigation-item-label ng-scope">Historique</span></a>');
         }
     }
 
