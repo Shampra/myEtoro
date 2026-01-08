@@ -4,9 +4,10 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 
 let config = null;
 let sheetData = null;
+let lastUrl = window.location.href;
 
 async function runFeatures() {
-    logger.log("Running features...");
+    logger.log("Running features for URL:", window.location.href);
     shortTitle.init(config);
     portfolioEnhancements.init(config, sheetData);
     watchlistEnhancements.init(config, sheetData);
@@ -39,11 +40,9 @@ async function main() {
         runFeatures();
 
         const observer = new MutationObserver((mutations) => {
-            for (const mutation of mutations) {
-                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                    runFeatures();
-                    break;
-                }
+            if (window.location.href !== lastUrl) {
+                lastUrl = window.location.href;
+                runFeatures();
             }
         });
 
