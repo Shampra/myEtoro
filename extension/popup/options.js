@@ -3,11 +3,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const config = await getConfig();
     const featuresContainer = document.getElementById("features");
 
-    //- Populate Google Sheets settings
-    document.getElementById("googleSheetEnabled").checked = config.googleSheet.enabled;
-    document.getElementById("idSpreadsheet").value = config.googleSheet.id || "";
-    document.getElementById("SheetName").value = config.googleSheet.sheetName || "";
-
     //- Populate debug mode setting
     document.getElementById("debugMode").checked = config.debug;
 
@@ -35,11 +30,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     //- Save settings
     document.querySelector("form").addEventListener("submit", async (e) => {
         e.preventDefault();
-
-        //- Save Google Sheets settings
-        config.googleSheet.enabled = document.getElementById("googleSheetEnabled").checked;
-        config.googleSheet.id = document.getElementById("idSpreadsheet").value;
-        config.googleSheet.sheetName = document.getElementById("SheetName").value;
 
         //- Save debug mode setting
         config.debug = document.getElementById("debugMode").checked;
