@@ -15,9 +15,9 @@ function getConfig() {
     return new Promise((resolve, reject) => {
         browser.storage.local.get("config").then(result => {
             if (result.config) {
-                resolve(result.config);
+                resolve({config: result.config, source: 'storage'});
             } else {
-                resolve(defaultConfig);
+                resolve({config: defaultConfig, source: 'default'});
             }
         }, error => {
             reject(error);

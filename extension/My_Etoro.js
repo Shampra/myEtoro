@@ -1,11 +1,10 @@
 //- Main script
-logger.log("My_Etoro extension loading...");
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 let config = null;
 let lastUrl = window.location.href;
 
-async function runFeatures() {
+function runFeatures() {
     logger.log("Running features for URL:", window.location.href);
     shortTitle.init(config);
     logger.log("Features executed.");
@@ -13,8 +12,12 @@ async function runFeatures() {
 
 async function main() {
     try {
-        logger.log("Fetching configuration...");
-        config = await getConfig();
+        const { config: loadedConfig, source } = await getConfig();
+        config = loadedConfig;
+
+        logger.init(config);
+        logger.log("My_Etoro extension loading...");
+        logger.log(`Configuration loaded from ${source}:`, config);
 
         runFeatures();
 
@@ -30,7 +33,7 @@ async function main() {
         observer.observe(targetNode, observerConfig);
 
     } catch (error) {
-        logger.log(`Error during initialization: ${error}`);
+        console.error(`Error during initialization: ${error}`);
     }
 }
 

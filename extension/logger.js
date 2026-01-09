@@ -2,8 +2,8 @@
 const logger = (() => {
     let config = null;
 
-    async function init() {
-        config = await getConfig();
+    function init(loadedConfig) {
+        config = loadedConfig;
     }
 
     function log(...args) {
@@ -12,9 +12,8 @@ const logger = (() => {
         }
     }
 
-    init();
-
     return {
+        init,
         log
     };
 })();
