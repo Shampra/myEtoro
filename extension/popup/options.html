@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+    <form>
+        <p id="SettingTitle" data-i18n="setting_Global_Title"></p>
+        <section id="configSheet">
+            <header class="header_config">
+                <h3 data-i18n="setting_GroupTitle_GoogleFile"></h3>
+                <div class="section_description">
+                    <span data-i18n="setting_GroupDesc_GoogleFile"></span>
+                </div>
+            </header>
+            <div class="element">
+                <input type="checkbox" id="googleSheetEnabled" />
+                <label class="checkbox" for="googleSheetEnabled" data-i18n="setting_googleSheetEnabled"></label>
+            </div>
+            <div class="element">
+                <label for="idSpreadsheet" data-i18n="settingsLabelidSpreadsheet"></label>
+                <input id="idSpreadsheet" type="text">
+            </div>
+            <div class="element">
+                <label for="SheetName" data-i18n="settingsLabelSheetName"></label>
+                <input id="SheetName" type="text">
+            </div>
+        </section>
+        <hr>
+        <section id="features">
+            <header class="header_config">
+                <h3 data-i18n="setting_GroupTitle_Options"></h3>
+            </header>
+            <!-- Features will be dynamically added here -->
+        </section>
+        <hr>
+        <section id="debug">
+            <header class="header_config">
+                <h3 data-i18n="setting_GroupTitle_Debug"></h3>
+            </header>
+            <div class="element">
+                <input type="checkbox" id="debugMode" />
+                <label class="checkbox" for="debugMode" data-i18n="setting_debugMode"></label>
+            </div>
+        </section>
+        <hr>
+        <button type="submit" data-i18n="setting_saveButton"></button>
+    </form>
+    <script src="../jquery.min.js"></script>
+    <script src="../config.js"></script>
+    <script src="options.js"></script>
+    <script src="../traduction.js"></script>
+</body>
+</html>
