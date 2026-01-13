@@ -5,6 +5,7 @@ const portfolioEnhancements = (() => {
             if (window.location.href.includes("https://www.etoro.com/portfolio")) {
                 logger.log("Initializing portfolioEnhancements feature...");
                 enrichPortfolio(sheetData);
+                addDirectMarketAccessLink();
             }
         }
     }
@@ -71,6 +72,24 @@ const portfolioEnhancements = (() => {
             menuTotaux += "</div><button class=\"updateTotaux\">" + browser.i18n.getMessage("boutonUpdate") + "</button></div></div>";
             $("div.inner-header-buttons").append(menuTotaux);
         }
+    }
+
+    function addDirectMarketAccessLink() {
+        browser.storage.local.get("MyEtoro_setDirectMarketAccess").then((res) => {
+            if (res.MyEtoro_setDirectMarketAccess) {
+                waitForKeyElements(
+                    '[automation-id="portfolio-position-list-row-instrument-url"]',
+                    (element) => {
+                        element.on("click", (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const instrument = $(e.currentTarget).find("img").attr("alt");
+                            window.location.href = `https://www.etoro.com/markets/${instrument}`;
+                        });
+                    }
+                );
+            }
+        });
     }
 
     return {

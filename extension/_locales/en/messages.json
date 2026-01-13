@@ -39,6 +39,10 @@
     "message": "Add a link to the marketplace page on the notifications image",
     "description": "Label de paramétrage pour le choix Lien des notifs"
   },
+  "settingsDirectMarketAccess": {
+    "message": "Direct access to market from portfolio",
+    "description": "Direct access to market from portfolio"
+  },
   "setting_GroupTitle_Debug": {
     "message": "Debug",
     "description": "Titre de la section Debug"

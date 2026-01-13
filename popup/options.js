@@ -11,7 +11,8 @@ function saveOptions(e) {
                 MyEtoro_SheetName: $("#SheetName").val(),
                 MyEtoro_idSpreadsheet: $("#idSpreadsheet").val(),
                 MyEtoro_setShortTitle: $("#titre_court").prop('checked'),
-                MyEtoro_setDirectLinkNotif: $("#DirectLinkNotification").prop('checked')
+                MyEtoro_setDirectLinkNotif: $("#DirectLinkNotification").prop('checked'),
+                MyEtoro_setDirectMarketAccess: $("#DirectMarketAccess").prop('checked')
             });
         $("form").append('<strong id="errorconfigSheet">Données enregistrées.</strong>');
     }
@@ -39,8 +40,9 @@ function saveOptions(e) {
         console.log(item);
         $("#SheetName").val(item.MyEtoro_SheetName) ;
         $("#idSpreadsheet").val(item.MyEtoro_idSpreadsheet) ;
-        $("#titre_court").prop('checked',MyEtoro_setShortTitle) ;
-        $("#DirectLinkNotification").prop('checked',MyEtoro_setDirectLinkNotif) ;
+        $("#titre_court").prop('checked',item.MyEtoro_setShortTitle) ;
+        $("#DirectLinkNotification").prop('checked',item.MyEtoro_setDirectLinkNotif) ;
+        $("#DirectMarketAccess").prop('checked',item.MyEtoro_setDirectMarketAccess) ;
       }
     var gettingItem = browser.storage.local.get();
     gettingItem.then(onGot, onError);

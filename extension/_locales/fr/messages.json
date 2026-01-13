@@ -39,6 +39,10 @@
     "message": "Ajouter un lien vers la page du marché sur l'image des notifications",
     "description": "Label de paramétrage pour le choix Lien des notifs"
   },
+  "settingsDirectMarketAccess": {
+    "message": "Accès direct au marché depuis le portefeuille",
+    "description": "Accès direct au marché depuis le portefeuille"
+  },
   "setting_GroupTitle_Debug": {
     "message": "Débogage",
     "description": "Titre de la section Debug"
