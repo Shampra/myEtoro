@@ -4,7 +4,7 @@ const watchlistEnhancements = (() => {
         if (config.features.watchlistEnhancements.enabled) {
             if (document.location.href.indexOf('watchlists') > -1) {
                 logger.log("Initializing watchlistEnhancements feature...");
-                enrichWatchlist(sheetData);
+                //enrichWatchlist(sheetData);
             }
         }
     }

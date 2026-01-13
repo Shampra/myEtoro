@@ -11,6 +11,8 @@ const manualTradesEnhancements = (() => {
 
     function enrichManualTrades(data) {
         logger.log("Enriching manual trades page...");
+        logger.log("Nothing to do for now...");
+        /*
         $("div.ui-table-row").each(function (index) {
             var currentItem = $(this).find("div.table-first-name").children("span.ng-binding").last().text().trim();
             var arrayCible = searchByNom(currentItem.toUpperCase(), data);
@@ -56,7 +58,7 @@ const manualTradesEnhancements = (() => {
                 $(this).attr({ 'download': "export.csv", 'href': csvData, 'target': '_blank' });
                 logger.log("Manual trades exported.");
             });
-        }
+        }*/
     }
 
     return {

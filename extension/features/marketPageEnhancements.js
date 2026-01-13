@@ -11,24 +11,7 @@ const marketPageEnhancements = (() => {
 
     function enrichMarketPage(data) {
         logger.log("Enriching market page...");
-        var currentItem;
-        $("div.user-head-content-ph").each(function (index) {
-            if ($(this).find(".myData").length) return;
-            currentItem = $(this).find("h1.user-nickname").text();
-            var arrayCible = searchByNom(currentItem.toUpperCase(), data);
-            if (arrayCible) {
-                logger.log(`Enriching ${currentItem}`);
-                var content = prepareContent(arrayCible);
-                var tips = $("<div></div>").addClass("myData").append(content);
-                $(this).find("img.avatar").after(tips);
-                if (arrayCible.ALERT == "x") $(this).find("h1.user-nickname").css({ "color": "red" });
-                if (arrayCible.LEVERAGE != "") $(this).find(".myData").append("<span class=\"icon_leverage_market\">" + arrayCible.LEVERAGE + "</span>");
-            }
-        });
-        if (!$("body").find("#customHisto").length) {
-            logger.log("Adding history link...");
-            $("nav.tabs-container").append('<a id="customHisto" href="/portfolio/history/market/' + currentItem + '" class="a-tabs-container-item"><span class="i-instrument-navigation-item-label ng-scope">Historique</span></a>');
-        }
+        logger.log("Nothing to do for now...");
     }
 
     return {

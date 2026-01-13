@@ -11,7 +11,9 @@ const historyExport = (() => {
 
     function addExportButton() {
         logger.log("Adding export button...");
-        var menuExport = "<a class=\"icon actionExport customMenu mobile-off\"><div class=\"list\"><img class=\"bt_img\" src=\"" + browser.runtime.getURL('images/export-excel.png') + "\"/></div></a>";
+        logger.log("Nothing to do for now...");
+        
+        /*var menuExport = "<a class=\"icon actionExport customMenu mobile-off\"><div class=\"list\"><img class=\"bt_img\" src=\"" + browser.runtime.getURL('images/export-excel.png') + "\"/></div></a>";
         if (!$("div.inner-header-buttons").find(".actionExport").length) {
             $("div.inner-header-buttons").append(menuExport);
             $(".actionExport").on('click', function (event) {
@@ -28,7 +30,7 @@ const historyExport = (() => {
                     }
                 }, 500);
             });
-        }
+        }*/
     }
 
     function exportHistory() {
