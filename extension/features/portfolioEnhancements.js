@@ -1,13 +1,35 @@
 //- Portfolio Enhancements feature
 const portfolioEnhancements = (() => {
     function init(config, sheetData) {
-        if (config.features.portfolioEnhancements.enabled) {
-            if (window.location.href.includes("https://www.etoro.com/portfolio")) {
+        if (window.location.href.includes("https://www.etoro.com/portfolio")) {
+            if (config.features.portfolioEnhancements.enabled) {
                 logger.log("Initializing portfolioEnhancements feature...");
                 enrichPortfolio(sheetData);
+                addDirectMarketAccessLink();
+            }
+            if (config.features.setDirectMarketAccess.enabled) {
+                logger.log("Initializing portfolioEnhancements Direct Access Market feature...");
+                enrichPortfolio(sheetData);
+                addDirectMarketAccessLink();
             }
         }
     }
+
+    function addDirectMarketAccessLink() {
+        logger.log("Lien direct?");
+        waitForKeyElements(
+            '[automation-id="portfolio-position-list-row-instrument-url"]',
+            (element) => {
+                element.on("click", (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const instrument = $(e.currentTarget).find("img").attr("alt");
+                    window.location.href = `https://www.etoro.com/markets/${instrument}`;
+                });
+            }
+        );
+    }
+
 
     function enrichPortfolio(data) {
         logger.log("Enriching portfolio...");

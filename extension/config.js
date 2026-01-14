@@ -17,25 +17,10 @@ const defaultConfig = {
             name: "Portfolio Enhancements",
             description: "Adds extra information and filtering options to the portfolio page."
         },
-        watchlistEnhancements: {
+        setDirectMarketAccess: {
             enabled: true,
-            name: "Watchlist Enhancements",
-            description: "Adds extra information and sorting options to the watchlist page."
-        },
-        marketPageEnhancements: {
-            enabled: true,
-            name: "Market Page Enhancements",
-            description: "Adds extra information to market pages."
-        },
-        historyExport: {
-            enabled: true,
-            name: "History Export",
-            description: "Adds a button to export the portfolio history to a CSV file."
-        },
-        manualTradesEnhancements: {
-            enabled: true,
-            name: "Manual Trades Enhancements",
-            description: "Adds extra information and export options to the manual trades page."
+            name: "Portfolio Enhancements - Link to market",
+            description: "Adds direct access to market into the portfolio"
         }
     }
 };
