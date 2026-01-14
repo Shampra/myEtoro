@@ -8,34 +8,25 @@ const defaultConfig = {
     },
     features: {
         shortTitle: {
-            enabled: true,
-            name: "Shorten page titles",
-            description: "Shortens the page titles to be more concise."
+            enabled: true
         },
         portfolioEnhancements: {
-            enabled: true,
-            name: "Portfolio Enhancements",
-            description: "Adds extra information and filtering options to the portfolio page."
+            enabled: true
         },
         watchlistEnhancements: {
-            enabled: true,
-            name: "Watchlist Enhancements",
-            description: "Adds extra information and sorting options to the watchlist page."
+            enabled: true
         },
         marketPageEnhancements: {
-            enabled: true,
-            name: "Market Page Enhancements",
-            description: "Adds extra information to market pages."
+            enabled: true
         },
         historyExport: {
-            enabled: true,
-            name: "History Export",
-            description: "Adds a button to export the portfolio history to a CSV file."
+            enabled: true
         },
         manualTradesEnhancements: {
-            enabled: true,
-            name: "Manual Trades Enhancements",
-            description: "Adds extra information and export options to the manual trades page."
+            enabled: true
+        },
+        directMarketAccess: {
+            enabled: false
         }
     }
 };

@@ -31,13 +31,61 @@
     "message": "Configuration des options",
     "description": "Titre de la section Options'"
   },
-  "settingsShortTitle": {
-    "message": "Raccourcir le titre de la page affiché sur l'onglet",
-    "description": "Label de paramétrage pour le choix Titre court"
+  "feature_shortTitle_name": {
+    "message": "Raccourcir les titres de page",
+    "description": "Nom de la fonctionnalité Raccourcir les titres de page"
   },
-  "settingsDirectLinkNotification": {
-    "message": "Ajouter un lien vers la page du marché sur l'image des notifications",
-    "description": "Label de paramétrage pour le choix Lien des notifs"
+  "feature_shortTitle_description": {
+    "message": "Raccourcit les titres de page pour être plus concis.",
+    "description": "Description de la fonctionnalité Raccourcir les titres de page"
+  },
+  "feature_portfolioEnhancements_name": {
+    "message": "Améliorations du portefeuille",
+    "description": "Nom de la fonctionnalité Améliorations du portefeuille"
+  },
+  "feature_portfolioEnhancements_description": {
+    "message": "Ajoute des informations supplémentaires et des options de filtrage à la page du portefeuille.",
+    "description": "Description de la fonctionnalité Améliorations du portefeuille"
+  },
+  "feature_watchlistEnhancements_name": {
+    "message": "Améliorations de la liste de surveillance",
+    "description": "Nom de la fonctionnalité Améliorations de la liste de surveillance"
+  },
+  "feature_watchlistEnhancements_description": {
+    "message": "Ajoute des informations supplémentaires et des options de tri à la page de la liste de surveillance.",
+    "description": "Description de la fonctionnalité Améliorations de la liste de surveillance"
+  },
+  "feature_marketPageEnhancements_name": {
+    "message": "Améliorations de la page marché",
+    "description": "Nom de la fonctionnalité Améliorations de la page marché"
+  },
+  "feature_marketPageEnhancements_description": {
+    "message": "Ajoute des informations supplémentaires aux pages marché.",
+    "description": "Description de la fonctionnalité Améliorations de la page marché"
+  },
+  "feature_historyExport_name": {
+    "message": "Exportation de l'historique",
+    "description": "Nom de la fonctionnalité Exportation de l'historique"
+  },
+  "feature_historyExport_description": {
+    "message": "Ajoute un bouton pour exporter l'historique du portefeuille dans un fichier CSV.",
+    "description": "Description de la fonctionnalité Exportation de l'historique"
+  },
+  "feature_manualTradesEnhancements_name": {
+    "message": "Améliorations des transactions manuelles",
+    "description": "Nom de la fonctionnalité Améliorations des transactions manuelles"
+  },
+  "feature_manualTradesEnhancements_description": {
+    "message": "Ajoute des informations supplémentaires et des options d'exportation à la page des transactions manuelles.",
+    "description": "Description de la fonctionnalité Améliorations des transactions manuelles"
+  },
+  "feature_directMarketAccess_name": {
+    "message": "Accès direct au marché",
+    "description": "Nom de la fonctionnalité d'accès direct au marché"
+  },
+  "feature_directMarketAccess_description": {
+    "message": "Accès direct au marché depuis le portefeuille",
+    "description": "Description de la fonctionnalité d'accès direct au marché"
   },
   "setting_GroupTitle_Debug": {
     "message": "Débogage",

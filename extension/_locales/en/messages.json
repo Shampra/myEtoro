@@ -31,13 +31,61 @@
     "message": "Configuring the options",
     "description": "Titre de la section Options'"
   },
-  "settingsShortTitle": {
-    "message": "Shorten the title of the page displayed on the tab",
-    "description": "Label de paramétrage pour le choix Titre court"
+  "feature_shortTitle_name": {
+    "message": "Shorten page titles",
+    "description": "Name of the Shorten page titles feature"
   },
-  "settingsDirectLinkNotification": {
-    "message": "Add a link to the marketplace page on the notifications image",
-    "description": "Label de paramétrage pour le choix Lien des notifs"
+  "feature_shortTitle_description": {
+    "message": "Shortens the page titles to be more concise.",
+    "description": "Description of the Shorten page titles feature"
+  },
+  "feature_portfolioEnhancements_name": {
+    "message": "Portfolio Enhancements",
+    "description": "Name of the Portfolio Enhancements feature"
+  },
+  "feature_portfolioEnhancements_description": {
+    "message": "Adds extra information and filtering options to the portfolio page.",
+    "description": "Description of the Portfolio Enhancements feature"
+  },
+  "feature_watchlistEnhancements_name": {
+    "message": "Watchlist Enhancements",
+    "description": "Name of the Watchlist Enhancements feature"
+  },
+  "feature_watchlistEnhancements_description": {
+    "message": "Adds extra information and sorting options to the watchlist page.",
+    "description": "Description of the Watchlist Enhancements feature"
+  },
+  "feature_marketPageEnhancements_name": {
+    "message": "Market Page Enhancements",
+    "description": "Name of the Market Page Enhancements feature"
+  },
+  "feature_marketPageEnhancements_description": {
+    "message": "Adds extra information to market pages.",
+    "description": "Description of the Market Page Enhancements feature"
+  },
+  "feature_historyExport_name": {
+    "message": "History Export",
+    "description": "Name of the History Export feature"
+  },
+  "feature_historyExport_description": {
+    "message": "Adds a button to export the portfolio history to a CSV file.",
+    "description": "Description of the History Export feature"
+  },
+  "feature_manualTradesEnhancements_name": {
+    "message": "Manual Trades Enhancements",
+    "description": "Name of the Manual Trades Enhancements feature"
+  },
+  "feature_manualTradesEnhancements_description": {
+    "message": "Adds extra information and export options to the manual trades page.",
+    "description": "Description of the Manual Trades Enhancements feature"
+  },
+  "feature_directMarketAccess_name": {
+    "message": "Direct Market Access",
+    "description": "Name of the Direct Market Access feature"
+  },
+  "feature_directMarketAccess_description": {
+    "message": "Direct access to market from portfolio",
+    "description": "Description of the Direct Market Access feature"
   },
   "setting_GroupTitle_Debug": {
     "message": "Debug",
