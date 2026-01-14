@@ -74,9 +74,29 @@
   " infosMarket_Objectif": {
     "message": "Target",
     "description": "Libellé objectif sur info d'un marché"
+  },
+  "feature_shortTitle_name": {
+    "message": "Shorten page titles",
+    "description": "Feature name for shortening page titles."
+  },
+  "feature_shortTitle_description": {
+    "message": "Shortens the page titles to be more concise.",
+    "description": "Feature description for shortening page titles."
+  },
+  "feature_portfolioEnhancements_name": {
+    "message": "Portfolio Enhancements",
+    "description": "Feature name for portfolio enhancements."
+  },
+  "feature_portfolioEnhancements_description": {
+    "message": "Adds extra information and filtering options to the portfolio page.",
+    "description": "Feature description for portfolio enhancements."
+  },
+  "feature_setDirectMarketAccess_name": {
+    "message": "Portfolio Enhancements - Link to market",
+    "description": "Feature name for direct market access."
+  },
+  "feature_setDirectMarketAccess_description": {
+    "message": "Adds direct access to market into the portfolio",
+    "description": "Feature description for direct market access."
   }
-  
-
-
-
 }

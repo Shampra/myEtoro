@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const label = document.createElement("label");
         label.classList.add("checkbox");
         label.setAttribute("for", featureKey);
-        label.textContent = feature.name;
+        label.textContent = browser.i18n.getMessage(`feature_${featureKey}_name`);
+        label.title = browser.i18n.getMessage(`feature_${featureKey}_description`);
 
         element.appendChild(checkbox);
         element.appendChild(label);
