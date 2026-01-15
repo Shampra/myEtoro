@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //- Populate debug mode setting
     document.getElementById("debugMode").checked = config.debug;
+    document.querySelector('[data-i18n="setting_GroupTitle_Debug"]').textContent = browser.i18n.getMessage("setting_GroupTitle_Debug");
+    document.querySelector('[data-i18n="setting_debugMode"]').textContent = browser.i18n.getMessage("setting_debugMode");
 
     //- Dynamically populate features
     for (const featureKey in config.features) {

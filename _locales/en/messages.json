@@ -98,5 +98,17 @@
   "feature_setDirectMarketAccess_description": {
     "message": "Adds direct access to market into the portfolio",
     "description": "Feature description for direct market access."
+  },
+  "setting_GroupTitle_Debug": {
+    "message": "Debug Mode",
+    "description": "Title for the Debug Mode section."
+  },
+  "setting_debugMode": {
+    "message": "Enable Debug Mode",
+    "description": "Label for the Enable Debug Mode checkbox."
+  },
+  "setting_saveButton": {
+    "message": "Save",
+    "description": "Save button text."
   }
 }
