@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //- Populate debug mode setting
     document.getElementById("debugMode").checked = config.debug;
+    document.querySelector('[data-i18n="setting_GroupTitle_Debug"]').textContent = browser.i18n.getMessage("setting_GroupTitle_Debug");
+    document.querySelector('[data-i18n="setting_debugMode"]').textContent = browser.i18n.getMessage("setting_debugMode");
 
     //- Dynamically populate features
     for (const featureKey in config.features) {
@@ -25,7 +27,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const label = document.createElement("label");
         label.classList.add("checkbox");
         label.setAttribute("for", featureKey);
-        label.textContent = feature.name;
+        label.textContent = browser.i18n.getMessage(`feature_${featureKey}_name`);
+        label.title = browser.i18n.getMessage(`feature_${featureKey}_description`);
 
         element.appendChild(checkbox);
         element.appendChild(label);

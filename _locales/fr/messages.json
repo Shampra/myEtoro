@@ -74,9 +74,41 @@
   " infosMarket_Objectif": {
     "message": "Objectif",
     "description": "Libellé objectif sur info d'un marché"
+  },
+  "feature_shortTitle_name": {
+    "message": "Raccourcir le titre des pages",
+    "description": "Nom de la fonctionnalité pour raccourcir le titre des pages."
+  },
+  "feature_shortTitle_description": {
+    "message": "Raccourcit le titre des pages pour être plus concis.",
+    "description": "Description de la fonctionnalité pour raccourcir le titre des pages."
+  },
+  "feature_portfolioEnhancements_name": {
+    "message": "Améliorations du portefeuille",
+    "description": "Nom de la fonctionnalité pour les améliorations du portefeuille."
+  },
+  "feature_portfolioEnhancements_description": {
+    "message": "Ajoute des informations supplémentaires et des options de filtrage à la page du portefeuille.",
+    "description": "Description de la fonctionnalité pour les améliorations du portefeuille."
+  },
+  "feature_setDirectMarketAccess_name": {
+    "message": "Améliorations du portefeuille - Lien vers le marché",
+    "description": "Nom de la fonctionnalité pour l'accès direct au marché."
+  },
+  "feature_setDirectMarketAccess_description": {
+    "message": "Ajoute un accès direct au marché dans le portefeuille",
+    "description": "Description de la fonctionnalité pour l'accès direct au marché."
+  },
+  "setting_GroupTitle_Debug": {
+    "message": "Mode Débogage",
+    "description": "Titre de la section Mode Débogage."
+  },
+  "setting_debugMode": {
+    "message": "Activer le mode débogage",
+    "description": "Label pour la case à cocher Activer le mode débogage."
+  },
+  "setting_saveButton": {
+    "message": "Enregistrer",
+    "description": "Texte du bouton Enregistrer."
   }
-  
-
-
-
 }
